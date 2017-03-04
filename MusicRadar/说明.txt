@@ -1,0 +1,18 @@
+1.lib  类中的odbc6.jar是 oracle 驱动 ,要将类配置到构建路径中。
+
+2.运行软件前请提前在oracle中建立两张表。代码如下：
+  
+  create table songMap(
+  songId int,
+  name VARCHAR2(200)
+  ); --此为歌曲ID和歌名表；
+  
+  create table hashmap(
+  hashId int,
+  songId int,
+  time int
+  ); --此为音乐指纹表；
+
+3.若要删除数据库中的songMap（歌曲表）和hashmap（指纹表）相应的数据（即删除部分数据库的歌曲），在数据库中
+  执行delete from 语句后必须关闭SqlDevelopment(强制提交更改)，再打开SqlDevelopment，重启本软件，方才能正
+  确录入歌曲到数据库。
